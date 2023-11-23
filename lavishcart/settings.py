@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+OTHER_APPS = [
+    'category',
+    'accounts',
+]
+
+INSTALLED_APPS += OTHER_APPS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -69,6 +76,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'lavishcart.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -120,6 +128,11 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
     'lavishcart/static',
 ]
+
+# media files configuration
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
